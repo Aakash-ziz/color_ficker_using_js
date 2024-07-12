@@ -3,9 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Color_ficker</title>
+    <style>
+        #main_container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: wheat;
+        }
+        button{
+            font-size: 36px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div id="main_container">
+        <button id="btn-f">Color_Flick</button>
+    </div>
 </body>
+<script>
+    let con = document.getElementById("main_container")
+    let col_fl = document.getElementById("btn-f")
+    col_fl.addEventListener('click',flick)
+
+    function flick() {
+        let radom_val = Math.random()
+        let val = Math.floor(radom_val * 6 + 1)
+        console.log(val)
+        if (val == 1) {
+            con.style.backgroundColor="red"
+        }
+        else if (val == 2){
+            con.style.backgroundColor="blue" 
+        }
+        else if(val == 3){
+            con.style.backgroundColor="green"
+        }
+        else if(val == 4){
+            con.style.backgroundColor="yellow"
+        }
+        else if(val == 5){
+            con.style.backgroundColor="pink"
+        }
+        else{
+            con.style.backgroundColor="black"
+        }
+    }
+
+</script>
+
 </html>
