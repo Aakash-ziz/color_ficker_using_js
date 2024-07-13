@@ -15,11 +15,23 @@
         button{
             font-size: 36px;
         }
+
+        #box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            height: 500px;
+            box-shadow: 2px 2px 2px 2px;
+            background-color: wheat;
+        }
     </style>
 </head>
 <body>
     <div id="main_container">
         <div id="box">
+        <h1 id="col">Color : Wheat</h1>
         <button id="btn-f">Color_Flick</button>
         </div>
     </div>
@@ -27,6 +39,9 @@
 <script>
     let con = document.getElementById("main_container")
     let col_fl = document.getElementById("btn-f")
+    let colr = document.getElementById("col")
+    let boz = document.getElementById("box")
+    
     col_fl.addEventListener('click',flick)
 
     function flick() {
@@ -34,22 +49,34 @@
         let val = Math.floor(radom_val * 6 + 1)
         console.log(val)
         if (val == 1) {
+            colr.textContent ="Color : Red"
             con.style.backgroundColor="red"
+            boz.style.backgroundColor="red"
         }
         else if (val == 2){
-            con.style.backgroundColor="blue" 
+            colr.textContent ="Color : Blue"
+            con.style.backgroundColor="blue"
+            boz.style.backgroundColor="blue" 
         }
         else if(val == 3){
+            colr.textContent ="Color : Green"
             con.style.backgroundColor="green"
+            boz.style.backgroundColor="green"
         }
         else if(val == 4){
+            colr.textContent ="Color : Yellow"
             con.style.backgroundColor="yellow"
+            boz.style.backgroundColor="yellow"
         }
         else if(val == 5){
+            colr.textContent ="Color : Pink"
             con.style.backgroundColor="pink"
+            boz.style.backgroundColor="pink"
         }
         else{
-            con.style.backgroundColor="black"
+            colr.textContent ="Color : purple"
+            con.style.backgroundColor="purple"
+            boz.style.backgroundColor="purple"
         }
     }
 
